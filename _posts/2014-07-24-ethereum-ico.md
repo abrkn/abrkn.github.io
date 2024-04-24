@@ -8,7 +8,7 @@ A very long and detailed guide to purchasing and securing ether. Anyone with les
 
 ## Buying the ether
 
-Head over to [ethereum.org](http://www.ethereum.org/) and click _buy ether_:
+Head over to [ethereum.org](https://www.ethereum.org/) and click _buy ether_:
 
 ![Buy ether](/assets/img/posts/2014-07-24-ethereum-ico/buy-ether.png)
 
@@ -71,7 +71,7 @@ And confirm that the file was renamed:
 
 I use the command _ls -lh_ to see the file size as well as the name. We see that my file is called _ether.json_ and is 1.5K bytes (1500 bytes).
 
-First, we’ll encrypt the file with the des3 algorithm. At this point you must invent a very strong password. I’ll be using the [password phrase](http://xkcd.com/936/) _correct horse battery staple_ without spaces, _correcthorsebatterystaple_. I’ll refer to this password as the _paper password_, as opposed to the _wallet password_ from the registration form.
+First, we’ll encrypt the file with the des3 algorithm. At this point you must invent a very strong password. I’ll be using the [password phrase](https://xkcd.com/936/) _correct horse battery staple_ without spaces, _correcthorsebatterystaple_. I’ll refer to this password as the _paper password_, as opposed to the _wallet password_ from the registration form.
 
 Encrypt the _ether.json_ file with DES3 and store it in _ether.json.des3_:
 
@@ -114,7 +114,7 @@ Open up the file, _ether.json.des3.b4_, in a text editor such as Notepad:
 
 The file is 1976 bytes, in my case, which is quite large for a QR, but not close to the limit of around 4000 bytes. Copy the entire file to your clipboard (Select All, Copy)
 
-Head over to [http://goqr.me/](http://goqr.me/) which has an easy to use QR Code generator. I’ve already pasted my clipboard into the text box:
+Head over to [https://goqr.me/](https://goqr.me/) which has an easy to use QR Code generator. I’ve already pasted my clipboard into the text box:
 
 Click on the _Download_ button, copy my settings and download as PNG:
 
