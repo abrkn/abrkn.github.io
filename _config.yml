@@ -77,7 +77,7 @@ theme_mode: # [light | dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/andreas-brekken.jpg
+avatar: /assets/img/andreas-brekken.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -172,6 +172,10 @@ defaults:
       path: assets/js/dist
     values:
       swcache: true
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 sass:
   style: compressed
