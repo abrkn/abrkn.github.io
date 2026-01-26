@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- Atkinson Hyperlegible Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+
+  {% seo %}
+
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="{{ '/' | relative_url }}" class="hero-link">
+        <div class="hero">
+          <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="avatar">
+          <div class="hero-text">
+            <h1>Andreas Brekken</h1>
+            <p class="tagline">{{ site.tagline }}</p>
+          </div>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Posts</a>
+        <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">About</a>
+        <a href="{{ '/media' | relative_url }}" class="nav-link {% if page.url == '/media/' %}active{% endif %}">Media</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="social-links">
+        <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener">X</a>
+        <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" class="email-link">Email</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+      <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+    </footer>
+  </div>
+
+  <script>
+    // Obfuscate email from bots
+    document.querySelector('.email-link').href = 'mailto:' + 'andreas' + '@' + 'brekken.com';
+  </script>
+</body>
+</html>

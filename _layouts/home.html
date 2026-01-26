@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="posts">
+  <h2 class="section-title">Recent Posts</h2>
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li class="post-item">
+      <a href="{{ post.url | relative_url }}" class="post-link">
+        <span class="post-title">{{ post.title }}</span>
+        <span class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+          {% assign words = post.content | number_of_words %}
+          {% assign minutes = words | divided_by: 200 %}
+          {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+          <span class="reading-time">{{ minutes }} min read</span>
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{{ content }}
