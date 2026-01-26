@@ -81,11 +81,6 @@ body {
 
 
 /* Hero */
-.hero-link {
-  text-decoration: none;
-  color: inherit;
-}
-
 .hero {
   display: flex;
   align-items: center;

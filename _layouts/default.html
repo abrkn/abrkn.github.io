@@ -20,15 +20,13 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <a href="{{ '/' | relative_url }}" class="hero-link">
-        <div class="hero">
-          <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="avatar">
-          <div class="hero-text">
-            <h1>Andreas Brekken</h1>
-            <p class="tagline">{{ site.tagline }}</p>
-          </div>
+      <div class="hero">
+        <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="avatar">
+        <div class="hero-text">
+          <h1>Andreas Brekken</h1>
+          <p class="tagline">{{ site.tagline }}</p>
         </div>
-      </a>
+      </div>
       <nav class="nav">
         <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Posts</a>
         <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">About</a>
