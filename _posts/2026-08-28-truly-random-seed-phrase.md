@@ -2,9 +2,10 @@
 layout: post
 title: A Truly Random Seed Phrase
 permalink: /posts/a-truly-random-seed-phrase
+description: "COLDCARD users lost 1,700 BTC to weak randomness. How to generate a BIP39 seed phrase from a shuffled deck of playing cards on an air-gapped Raspberry Pi."
+image: /assets/img/posts/2026-08-28-truly-random-seed-phrase/og-image.jpg
+cover: /assets/img/posts/2026-08-28-truly-random-seed-phrase/cover.jpg
 ---
-
-![](/assets/img/posts/2026-08-28-truly-random-seed-phrase/intro-coldcard.jpg)
 
 COLDCARD users were hacked for over 1,700 BTC ($100m) earlier this year. The COLDCARD seed word generation was extremely weak, allowing hackers to guess the seed words of every user and drain their wallets. This led many crypto users to start doubting the quality of their own seed words.
 

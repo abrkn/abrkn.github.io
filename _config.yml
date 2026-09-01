@@ -10,6 +10,7 @@ baseurl: ""
 # Author
 author:
   name: Andreas Brekken
+  twitter: abrkn
   email: andreas@brekken.com
   avatar: /assets/img/andreas-brekken.jpg
 
@@ -19,6 +20,11 @@ social:
   twitter: abrkn
   instagram: abrkn
   email: andreas@brekken.com
+
+# Used by jekyll-seo-tag for X/Twitter cards
+twitter:
+  username: abrkn
+  card: summary_large_image
 
 # Build settings
 theme: minima
@@ -37,6 +43,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-gist
 
 # Permalink structure
