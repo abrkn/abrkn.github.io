@@ -23,14 +23,14 @@
   <div class="container">
     <header class="site-header">
       <div class="hero">
-        <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="avatar">
+        <a href="{{ '/' | relative_url }}" class="avatar-link"><img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="avatar"></a>
         <div class="hero-text">
-          <h1>Andreas Brekken</h1>
+          <h1><a href="{{ '/' | relative_url }}">Andreas Brekken</a></h1>
           <p class="tagline">{{ site.tagline }}</p>
         </div>
       </div>
       <nav class="nav">
-        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Posts</a>
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.layout == 'post' %}active{% endif %}">Posts</a>
         <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">About</a>
         <a href="{{ '/media' | relative_url }}" class="nav-link {% if page.url == '/media/' %}active{% endif %}">Media</a>
       </nav>
@@ -45,6 +45,7 @@
         <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
         <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener">X</a>
         <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://{{ site.social.substack }}" target="_blank" rel="noopener">Substack</a>
         <a href="#" class="email-link">Email</a>
         <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
       </div>
@@ -53,8 +54,15 @@
   </div>
 
   <script>
-    // Obfuscate email from bots
-    document.querySelector('.email-link').href = 'mailto:' + 'andreas' + '@' + 'brekken.com';
+    // Email is rot13'd so the plain address never appears in the HTML source.
+    // Harvesters that regex the markup for an address find nothing.
+    (function () {
+      var e = 'naqernf@oerxxra.pbz'.replace(/[a-z]/g, function (c) {
+        return String.fromCharCode((c.charCodeAt(0) - 97 + 13) % 26 + 97);
+      });
+      var a = document.querySelector('.email-link');
+      if (a) { a.href = 'mailto:' + e; a.title = e; }
+    })();
   </script>
 </body>
 </html>

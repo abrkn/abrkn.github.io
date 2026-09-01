@@ -29,6 +29,12 @@ html {
   /* full-bleed .post-cover uses 100vw, which counts the scrollbar;
      clip (not hidden) avoids creating a scroll container */
   overflow-x: clip;
+  /* Always reserve the scrollbar track so centred content doesn't shift
+     horizontally between pages that scroll and pages that don't.
+     overflow-y: scroll is what actually makes <html> a scroll container --
+     scrollbar-gutter alone is inert while overflow-y computes to visible. */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -104,13 +110,16 @@ body {
   font-weight: 700;
 }
 
+/* avatar and name link home, but stay visually undecorated */
 .hero-text h1 a {
-  color: var(--accent);
+  color: inherit;
   text-decoration: none;
 }
 
-.hero-text h1 a:hover {
-  text-decoration: underline;
+.avatar-link {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .tagline {

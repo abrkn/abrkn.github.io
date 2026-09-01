@@ -11,7 +11,6 @@ baseurl: ""
 author:
   name: Andreas Brekken
   twitter: abrkn
-  email: andreas@brekken.com
   avatar: /assets/img/andreas-brekken.jpg
 
 # Social links
@@ -19,7 +18,7 @@ social:
   github: abrkn
   twitter: abrkn
   instagram: abrkn
-  email: andreas@brekken.com
+  substack: brekken.substack.com
 
 # Used by jekyll-seo-tag for X/Twitter cards
 twitter:
